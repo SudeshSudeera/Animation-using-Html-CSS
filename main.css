@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.top-outer{
+    width: 100%;
+    height: 50vh;
+    background-color: rgba(52, 152, 219,0.2);
+    position: relative;
+    overflow: hidden;
+}
+.road-top{
+    width: 100%;
+    height: 40vh;
+    background-color: rgba(52, 73, 94,1.0);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.road-bottom{
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(230, 126, 34,0.5);
+}
+
+/*==================================*/
+.car-wrapper{
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: -200px;
+    animation: left-to-right 10s linear infinite;
+}
+.car{
+    width: 100%;
+}
+.wheel{
+    width: 35px;
+    position: absolute;
+    bottom: 25px;
+    animation-name: forward-wheel;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.wheel-1{
+    left: 25px;
+}
+.wheel-2{
+    right: 32px;
+}
+.m-1{
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+}
+.m-2{
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+.line{
+    width: 100%;
+    border: 5px dashed white;
+}
+
+.cloud-1{
+    width: 150px;
+    position: absolute;
+    right: -150px;
+    animation: cloud 10s linear infinite;
+}
+.cloud-2{
+    width: 150px;
+    position: absolute;
+    right: -150px;
+    top: 150px;
+    animation: cloud 20s linear infinite;
+}
+.bird{
+    width: 100px;
+    position: absolute;
+    /*left: -150px;
+    top: 150px;*/
+    animation: bird 10s linear infinite;
+}
+/*==================================*/
+@keyframes bird {
+    from{
+        left: -150px;
+    }
+    to{
+        left: 1600px;
+    }
+}
+
+@keyframes cloud {
+    from{
+        right: -150px;
+    }
+    to{
+        right: 1600px;
+    }
+}
+
+@keyframes forward-wheel {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes left-to-right {
+    0%{
+        right: -200px;
+        transform: rotateY(0) scale(1);
+    }
+    50%{
+        right: 1600px;
+    }
+    100%{
+        right: -200px;
+        transform: rotateY(180deg) scale(1);
+    }
+}
+/*==================================*/
